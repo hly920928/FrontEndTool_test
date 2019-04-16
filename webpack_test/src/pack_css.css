@@ -1,0 +1,12 @@
+#p1{
+    background-color: azure;
+}
+#p2{
+    background-color: rgb(185, 164, 44);
+}
+#p3{
+    background-color: rgb(199, 183, 238);
+}
+body{
+    background-image: url("webpack.jpg");
+}

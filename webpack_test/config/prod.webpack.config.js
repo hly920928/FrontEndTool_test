@@ -46,11 +46,11 @@ module.exports = {
     new webpackBuildIn.BannerPlugin("hello from webpackBuildIn.BannerPlugin"),
     new hwp({template:"./template_1.html"}),//relative to this file
     new cleaner(),
-    /* new uglify(), */
+    new uglify(),
     new webpackBuildIn.HotModuleReplacementPlugin()
   ]
      
 ,
- /*   mode:"production", */
-  mode:"development"
+   mode:"production",
+/*   mode:"development" */
 };

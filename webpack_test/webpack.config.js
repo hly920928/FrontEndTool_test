@@ -42,12 +42,23 @@ module.exports = {
     }
     ]
   },
+  optimization: {
+    splitChunks: {
+        cacheGroups: {
+            commons: { //bundle common file into a common file
+                name: "commons",
+                chunks: "all",
+                minChunks: 2
+            }
+        }
+    }
+},
   plugins:[ 
     new webpackBuildIn.BannerPlugin("hello from webpackBuildIn.BannerPlugin"),
     new hwp({template:"./template_1.html"}),//relative to this file
     new cleaner(),
     new uglifyjs(),
-    new webpackBuildIn.optimize.CommonChunkPlugin({name:"common"}),//bundle common file
+  /*   new webpackBuildIn.optimize.CommonsChunkPlugin({name:"common"}), */
     new webpackBuildIn.HotModuleReplacementPlugin()
   ]
      

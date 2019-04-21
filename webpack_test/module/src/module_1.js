@@ -7,4 +7,4 @@ export{
 }
 var info_module_export="info_module_export_in_module_1"; */
 var info_module_export="info_module_export_in_module_1";
-module.exports=info_module_export;// equal with  export default info_default; 
+module.exports=info_module_export;// equal with  export 

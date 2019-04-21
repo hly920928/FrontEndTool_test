@@ -2,12 +2,12 @@ const path = require('path');
 const webpackBuildIn=require("webpack");
 const hwp=require("html-webpack-plugin");
 const cleaner=require("clean-webpack-plugin");
-const uglify=require("uglifyjs-webpack-plugin");
+const uglifyjs=require("uglifyjs-webpack-plugin");
 module.exports = {
   entry: {
     entry_file:'./src/entry_1.js',
-   /*  m1:'./src/module_1.js',
-    m2:'./src/module_2.js' */
+    m1:'./src/module_1.js',
+    m2:'./src/module_2.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -46,7 +46,8 @@ module.exports = {
     new webpackBuildIn.BannerPlugin("hello from webpackBuildIn.BannerPlugin"),
     new hwp({template:"./template_1.html"}),//relative to this file
     new cleaner(),
-    /* new uglify(), */
+    new uglifyjs(),
+    new webpackBuildIn.optimize.CommonChunkPlugin({name:"common"}),//bundle common file
     new webpackBuildIn.HotModuleReplacementPlugin()
   ]
      

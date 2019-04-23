@@ -6,13 +6,14 @@ const uglifyjs=require("uglifyjs-webpack-plugin");
 module.exports = {
   entry: {
     entry_file:'./src/entry_1.js',
-    m1:'./src/module_1.js',
-    m2:'./src/module_2.js'
+   /*  m1:'./src/module_1.js',
+    m2:'./src/module_2.js' */
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[hash].bundled.js',
-    publicPath:"" //must clear to use webpack-dev-server public file dir,relative to "path"
+    publicPath:"" ,//must clear to use webpack-dev-server public file dir,relative to "path"
+    chunkFilename: '[name].chunk.js'//chunk name setting for lazy loading
   },
   devtool:"inline-source-map",
   devServer:{
